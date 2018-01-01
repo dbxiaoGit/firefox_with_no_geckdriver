@@ -129,7 +129,7 @@ public class DataProvider {
                     res += objss[j] + ", ";
             }
             res.substring(0, res.length()-3);
-            System.out.println(res);
+            logger.info(res);
         }
     }
 

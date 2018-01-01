@@ -1,7 +1,6 @@
 package com.test.common;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.ArrayList;
 import java.util.HashSet;
