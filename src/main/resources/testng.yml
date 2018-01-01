@@ -1,0 +1,10 @@
+name: selenium demo
+threadCount: 1
+parameters: { n: 42 }
+
+tests:
+  - name: demo1
+    parameters: { count: 10 }
+    excludedGroups: [ broken ]
+    classes:
+      - com.test.testcases.Demo1
