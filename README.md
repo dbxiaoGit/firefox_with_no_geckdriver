@@ -1,0 +1,2 @@
+# firefox_with_no_geckdriver
+不需要geckdriver的最后一个firefox版本
