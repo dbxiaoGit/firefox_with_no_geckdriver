@@ -4,6 +4,7 @@ import com.test.common.BaseAction;
 import com.test.pages.QQIndexPage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -27,6 +28,15 @@ public class QQIndex extends BaseAction {
         QQIndexPage qqIndexPage = new QQIndexPage();
         qqIndexPage.goToAssignedPage(locator);
         setCheckPoint(assertType,null,expected);
+        check();
+
+    }
+
+    @AfterTest
+    public void afterT(){
+        if(driver.getWindowHandles().size() > 1){
+            driver.close();
+        }
     }
 
 }
