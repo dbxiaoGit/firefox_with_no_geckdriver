@@ -56,7 +56,8 @@ public class BaseAction extends BaseOps {
     public void setCheckPoint(String checkType,String locator,String expectation){
         if(checkType.equals("元素个数")){
             int actualNum = driver.findElements(By.cssSelector(locator)).size();
-            int expectationNum = Integer.valueOf(expectation);
+            Double double1 = Double.parseDouble(expectation);
+            int expectationNum = double1.intValue();
             CheckPoint cp = new CheckPoint(caseId,actualNum,expectationNum);
             checkPoints.add(cp);
         }
