@@ -34,8 +34,9 @@ public class QQIndex extends BaseAction {
 
     @AfterTest
     public void afterT(){
-        if(driver.getWindowHandles().size() > 1){
-            driver.close();
+        for(String handle : driver.getWindowHandles()) {
+            logger.info("handle:{}",handle);
+            driver.switchTo().window(handle).close();
         }
     }
 
