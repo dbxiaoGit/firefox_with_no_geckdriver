@@ -55,7 +55,7 @@ private final Logger logger = LoggerFactory.getLogger(getClass());
 
 * reportng报告乱码问题参考
     * http://blog.csdn.net/jack_chen3/article/details/77431805
-    * 要修改AbstractReporter中的generateFile方法中 >
+    * 要修改AbstractReporter中的generateFile方法中
     * //Writer writer = new BufferedWriter(new FileWriter(file));
     * //encoding to utf-8
     * OutputStream ut=new FileOutputStream(file);
