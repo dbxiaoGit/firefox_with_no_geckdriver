@@ -24,13 +24,11 @@ public class DataProvider {
             parseDataExcel(excelFileName);
             printDatas();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("error:{}",e);
         }
     }
 
     public static void parseDataExcel(String excelFileName) throws Exception {
-        //File excelFile = new File(excelFileName);
-        //OPCPackage pkg = OPCPackage.open(excelFile);
         XSSFWorkbook workbook = new XSSFWorkbook(excelFileName);
         int sheetNums = workbook.getNumberOfSheets();
         for (int i = 0; i < sheetNums; i++) {
@@ -104,11 +102,6 @@ public class DataProvider {
                 currentSheetDatas.add(currentRowTestDataCellValuesArray);
             }
 
-//            Object[][] objDatas = new Object[sheetDatas.size()][];
-//            for (int k=0; k<objDatas.length; k++) {
-//                objDatas[k] = sheetDatas.get(k);
-//            }
-//            datas.put(testCaseName, objDatas);
             Object[][] currentSheetDatasArray = new Object[currentSheetDatas.size()][];
             for(int k=0; k<currentSheetDatasArray.length; k++){
                 currentSheetDatasArray[k] = currentSheetDatas.get(k);
@@ -128,7 +121,6 @@ public class DataProvider {
                 else
                     res += objss[j] + ", ";
             }
-            res.substring(0, res.length()-3);
             logger.info(res);
         }
     }
@@ -153,6 +145,5 @@ public class DataProvider {
 
 
     public static void main(String[] s){
-        //printObjects(datas.get("baidu index"));
     }
 }
