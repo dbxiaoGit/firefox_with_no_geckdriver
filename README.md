@@ -59,4 +59,12 @@ private final Logger logger = LoggerFactory.getLogger(getClass());
     * //Writer writer = new BufferedWriter(new FileWriter(file));
     * //encoding to utf-8
     * OutputStream ut=new FileOutputStream(file);
-    * Writer writer = new BufferedWriter(new OutputStreamWriter(out,"utf-8"));
+    * Writer writer = new BufferedWriter(new OutputStreamWriter(out,"utf-8"));
+    
+* # Auto add env parameter $PROMPT_COMMAND when use non-Linux tty login by ssh.
+if [ "$SSH_CONNECTION" != '' -a "$TERM" != 'linux' ]; then
+declare -a HOSTIP
+HOSTIP=`echo $SSH_CONNECTION |awk '{print $3}'`
+export PROMPT_COMMAND='echo -ne "\033]0;$HOSTIP\007"'
+fi
+export GREP_OPTIONS='--color=auto' GREP_COLOR='36'
