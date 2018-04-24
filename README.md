@@ -49,6 +49,8 @@ private final Logger logger = LoggerFactory.getLogger(getClass());
     * run>edit configuretions>configuration>listeners>org.uncommons.reportng.HTMLReporter
     * run>edit configuretions>configuration>listeners>org.uncommons.reportng.JUnitXMLReporter
 
+* https://mobaxterm.mobatek.net/download-home-edition.html
+
 
 * jenkins不显示样式解决方案：
     * 使用这种方式启动：java  -jar jenkins.war -Dhudson.model.DirectoryBrowserSupport.CSP=
